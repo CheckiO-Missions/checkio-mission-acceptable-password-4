@@ -11,8 +11,8 @@ api.add_listener(
         tests=TESTS,
         # checker=to_list,
         function_name={
-            "python": is_acceptable_password,
-            "js": isAcceptablePassword
+            "python": "is_acceptable_password",
+            "js": "isAcceptablePassword"
         },
         cover_code={
             'python-3': {},
