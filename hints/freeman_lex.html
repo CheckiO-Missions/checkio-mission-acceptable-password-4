@@ -1,0 +1,113 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission.
+    </div>
+    <div class="answer">
+        Let's continue with the solution from hints of the previous mission in
+        the series.
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password) > 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password) 
+
+    return all([cond1, cond2, cond3])
+        </pre>
+        In this mission you should add to this solution, that if the length of
+        password bigger than 9 cond2 and cond3 are not required.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok. How should I do that?
+    </div>
+    <div class="answer">
+        Use <a target="_blank" href="https://www.w3schools.com/python/gloss_python_if_statement.asp">if statement</a> and
+        len() function you already used.
+        <br />
+        <br />
+        <pre class="brush: python">
+if len(password) > 9:
+    # do something
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I don't understand, how to disable conditions.      
+    </div>
+    <div class="answer">
+        Since all() function in return is True, when all items inside are True, 
+        you just need to assign not required conditions to True, as they are
+        already valid:
+        <br />
+        <br />
+        <pre class="brush: python">
+if len(password) > 9:    
+    cond2 = cond3 = True
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        So how my final solution for this mission should look like?
+    </div>
+    <div class="answer">
+        Here it is:
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password) > 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password)
+    if len(password) > 9: # cond4    
+        cond2 = cond3 = True
+
+    return all([cond1, cond2, cond3])        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Show me more solutions!<br />
+        'Cause I wanna be a real Python Ninnjaa!
+    </div>
+    <div class="answer">
+        Sure, grab it!<br />
+        Check the whole password of being digit (string integer without letters)
+        or being all letters (word without digits). Combining conditions with
+        parentheses, 'and' and 'or' operators.
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(x: str) -> bool:
+
+    return (len(x)>6 and not x.isdigit() and not x.isalpha()) or len(x)>9
+        </pre>
+        Using any() function and cascade comparisons.
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(x: str) -> bool:
+
+    return any((len(x) > 9, 0 < sum(ch.isdigit() for ch in x) < len(x) > 6))
+        </pre>
+        Click "Best solutions" at mission menu and see a lot of other
+        interesting solutions!
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Thanks! I know and understand more now! Everything works fine!
+    </div>
+    <div class="answer">
+        Glad to hear it! Try to solve the next one in the series.
+    </div>
+</div>
+</body>

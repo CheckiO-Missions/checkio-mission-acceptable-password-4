@@ -1,0 +1,110 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Я уявлення не маю, як почати розв'язування цієї місії.
+    </div>
+    <div class="answer">
+        Давай продовжимо розв'язок з останньої підказки попередньої місії в серії.
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password) > 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password) 
+
+    return all([cond1, cond2, cond3])
+        </pre>
+        У цій місії тобі слід додати до розв'язку, що, при паролі довжиною більше
+        9, умови про наявність і кількість цифр не застосовуються.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+       Добре. Як мені це зробити?
+    </div>
+    <div class="answer">
+        Використай <a target="_blank" href="https://www.w3schools.com/python/gloss_python_if_statement.asp">if твердження</a> і
+        функцію len(), яка тобі вже знайома.
+        <br />
+        <br />
+        <pre class="brush: python">
+if len(password) > 9:
+    # робити операції
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Я не розумію, як виключити умови   
+    </div>
+    <div class="answer">
+        Оскільки функція all() в return набуває True, коли всі елементи всередині True, 
+        тобі лише потрібно присвоїти необов'язковим умовам значення True, так наче вони вже виконані:
+        <br />
+        <br />
+        <pre class="brush: python">
+if len(password) > 9:    
+    cond2 = cond3 = True
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        То як мій остаточний розв'язок має виглядати?
+    </div>
+    <div class="answer">
+        Ось він:
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password) > 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password)
+    if len(password) > 9: # cond4    
+        cond2 = cond3 = True
+
+    return all([cond1, cond2, cond3])        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Покажи мені більше розв'язків!<br />
+        Адже я хочу стати справжнім Python Ніндзею!
+    </div>
+    <div class="answer">
+        Звісно, тримай!<br />
+        Перевірка всього пароля на те, чи є він числом (текстове ціле число без
+        букв) або всіма літерами (слово без цифр). Поєднання умов з допомогою
+        дужок, операторів 'and' і 'or'.
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(x: str) -> bool:
+
+    return (len(x)>6 and not x.isdigit() and not x.isalpha()) or len(x)>9
+        </pre>
+        Використання функції any() і каскаду порівнянь.
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(x: str) -> bool:
+
+    return any((len(x) > 9, 0 < sum(ch.isdigit() for ch in x) < len(x) > 6))
+        </pre>
+        Тисни "Best solutions" в меню місії і ти побачиш багато інших цікавих розв'язків!
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Дякую! Тепер я знаю і розумію більше! Все працює як слід!
+    </div>
+    <div class="answer">
+        Приємно це чути! Спробуй розв'язати наступну в цій серії.
+    </div>
+</div>
+</body>
