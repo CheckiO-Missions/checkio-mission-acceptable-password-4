@@ -44,12 +44,12 @@ TESTS = {
         {
             "input": ["12345678910"],
             "answer": True
-        }
+        },
     ],
     "Extra": [
         {
             "input": ["this is password"],
             "answer": True
-        }
+        },
     ]
 }

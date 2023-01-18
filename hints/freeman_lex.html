@@ -1,13 +1,15 @@
 <body data-author="freeman_lex">
 <div class="question-answer">
     <div class="question">
-        I have no idea how to start solving this mission.
+        <p>
+            I have no idea how to start solving this mission.
+        </p>
     </div>
     <div class="answer">
-        Let's continue with the solution from hints of the previous mission in
+        <p>
+            Let's continue with the solution from hints of the previous mission in
         the series.
-        <br />
-        <br />
+        </p>
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
 
@@ -17,35 +19,37 @@ def is_acceptable_password(password: str) -> bool:
 
     return all([cond1, cond2, cond3])
         </pre>
-        In this mission you should add to this solution, that if the length of
-        password bigger than 9 cond2 and cond3 are not required.
+        <p>
+            In this mission you should add to this solution, that if the length of password bigger than 9,<b class="code">cond2</b> and <b class="code">cond3</b> are not required.
+        </p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        Ok. How should I do that?
+        <p>
+            Ok. How should I do that?
+        </p>
     </div>
     <div class="answer">
-        Use <a target="_blank" href="https://www.w3schools.com/python/gloss_python_if_statement.asp">if statement</a> and
-        len() function you already used.
-        <br />
-        <br />
+        <p>
+            Use <a target="_blank" href="https://www.w3schools.com/python/gloss_python_if_statement.asp">if statement</a> and <b class="code">len()</b> function you already used.
+        </p>
         <pre class="brush: python">
 if len(password) > 9:
-    # do something
+    ...
         </pre>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        I don't understand, how to disable conditions.      
+        <p>
+            I don't understand, how to disable conditions.
+        </p>
     </div>
     <div class="answer">
-        Since all() function in return is True, when all items inside are True, 
-        you just need to assign not required conditions to True, as they are
-        already valid:
-        <br />
-        <br />
+        <p>
+            Since <b class="code">all()</b> function in return is <b class="code">True</b>, when all items inside are <b class="code">True</b>, you just need to assign not required conditions to <b class="code">True</b>, like they are already valid:
+        </p>
         <pre class="brush: python">
 if len(password) > 9:    
     cond2 = cond3 = True
@@ -54,12 +58,14 @@ if len(password) > 9:
 </div>
 <div class="question-answer">
     <div class="question">
-        So how my final solution for this mission should look like?
+        <p>
+            So how my final solution for this mission should look like?
+        </p>
     </div>
     <div class="answer">
-        Here it is:
-        <br />
-        <br />
+        <p>
+            Here it is:
+        </p>
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
 
@@ -75,39 +81,46 @@ def is_acceptable_password(password: str) -> bool:
 </div>
 <div class="question-answer">
     <div class="question">
-        Show me more solutions!<br />
-        'Cause I wanna be a real Python Ninnjaa!
+        <p>
+            Show me more solutions!<br />
+            'Cause I wanna be a real 🥇 Python Ninnjaa!
+        </p>
     </div>
     <div class="answer">
-        Sure, grab it!<br />
-        Check the whole password of being digit (string integer without letters)
-        or being all letters (word without digits). Combining conditions with
-        parentheses, 'and' and 'or' operators.
-        <br />
-        <br />
+        <p>
+            Sure, grab it!
+        </p>
+        <p>
+            Check the whole password of being digit (string integer without letters) or being all letters (word without digits). Combining conditions with parentheses, <b class="code">and</b> and <b class="code">or</b> operators.
+        </p>
         <pre class="brush: python">
 def is_acceptable_password(x: str) -> bool:
 
     return (len(x)>6 and not x.isdigit() and not x.isalpha()) or len(x)>9
         </pre>
-        Using any() function and cascade comparisons.
-        <br />
-        <br />
+        <p>
+            Using <b class="code">any()</b> function and cascade comparisons.
+        </p>
         <pre class="brush: python">
 def is_acceptable_password(x: str) -> bool:
 
     return any((len(x) > 9, 0 < sum(ch.isdigit() for ch in x) < len(x) > 6))
         </pre>
-        Click "Best solutions" at mission menu and see a lot of other
-        interesting solutions!
+        <p><b>
+            Click "Best solutions" at mission menu and see a lot of other interesting solutions!
+        </b></p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        Thanks! I know and understand more now! Everything works fine!
+        <p>
+            Thanks! I know and understand more now! Everything works fine!
+        </p>
     </div>
     <div class="answer">
-        Glad to hear it! Try to solve the next one in the series.
+        <p>
+            👍 Glad to hear it! Try to solve the next one in the series.
+        </p>
     </div>
 </div>
 </body>
