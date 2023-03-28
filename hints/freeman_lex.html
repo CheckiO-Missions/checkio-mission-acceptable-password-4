@@ -66,6 +66,7 @@ if len(password) > 9:
         <p>
             Here it is:
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
 
@@ -77,6 +78,7 @@ def is_acceptable_password(password: str) -> bool:
 
     return all([cond1, cond2, cond3])        
         </pre>
+        </div>
     </div>
 </div>
 <div class="question-answer">
@@ -93,19 +95,23 @@ def is_acceptable_password(password: str) -> bool:
         <p>
             Check the whole password of being digit (string integer without letters) or being all letters (word without digits). Combining conditions with parentheses, <b class="code">and</b> and <b class="code">or</b> operators.
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def is_acceptable_password(x: str) -> bool:
 
     return (len(x)>6 and not x.isdigit() and not x.isalpha()) or len(x)>9
         </pre>
+        </div>
         <p>
             Using <b class="code">any()</b> function and cascade comparisons.
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def is_acceptable_password(x: str) -> bool:
 
     return any((len(x) > 9, 0 < sum(ch.isdigit() for ch in x) < len(x) > 6))
         </pre>
+        </div>
         <p><b>
             Click "Best solutions" at mission menu and see a lot of other interesting solutions!
         </b></p>
