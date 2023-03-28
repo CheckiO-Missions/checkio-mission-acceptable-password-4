@@ -66,6 +66,7 @@ if len(password) > 9:
         <p>
             Ось він:
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
 
@@ -77,6 +78,7 @@ def is_acceptable_password(password: str) -> bool:
 
     return all([cond1, cond2, cond3])        
         </pre>
+        </div>
     </div>
 </div>
 <div class="question-answer">
@@ -93,19 +95,23 @@ def is_acceptable_password(password: str) -> bool:
         <p>
             Перевірка всього пароля на те, чи є він числом (текстове ціле число без букв) або всіма літерами (слово без цифр). Поєднання умов з допомогою дужок, операторів <b class="code">and</b> і <b class="code">or</b>.
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def is_acceptable_password(x: str) -> bool:
 
     return (len(x)>6 and not x.isdigit() and not x.isalpha()) or len(x)>9
         </pre>
+        </div>
         <p>
             Використання функції <b class="code">any()</b> і каскаду порівнянь.
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def is_acceptable_password(x: str) -> bool:
 
     return any((len(x) > 9, 0 < sum(ch.isdigit() for ch in x) < len(x) > 6))
         </pre>
+        </div>
         <p><b>
             Тисни "Best solutions" в меню місії і ти побачиш багато інших цікавих розв'язків!
         </b></p>
