@@ -1,0 +1,133 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Я уявлення не маю, як почати вирішувати цю місію.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Давай продовжимо з остаточного рішення з підказок до попередньої місії в серії.
+        </p>
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length > 6;
+    const cond2 = /\d/.test(password);
+    const cond3 = /\D/.test(password);
+    
+    return !([cond1, cond2, cond3].includes(false));
+}
+        </pre>
+        <p>
+            У цій місії ти маєш додати до свого рішення перевірки, якщо довжина пароля більша за 9, <b class="code">cond2</b> і <b class="code">cond3</b> не потрібні.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Добре.Я к мені це робити?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Використай вираз <a target="_blank" href="https://www.w3schools.com/jsref/jsref_if.asp">if</a> і властивість <b class="code">length</b>, яка тобі вже відома.
+        </p>
+        <pre class="brush: javascript">
+if (password.length > 9) ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Я не розумію, як відключити умови.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Оскільки вираз в <b class="code">return</b> набуває значення <b class="code">true</b>, якщо всі елементи масиву мають значення <b class="code">true</b>, тобі лише потрібно присвоїти необов'язковим умовам значення <b class="code">true</b>, наче наче вони вже виконані:
+        </p>
+        <pre class="brush: javascript">
+if (password.length > 9) cond2 = cond3 = true;
+        </pre>
+        <p>
+            Крім того, оскільки ми можемо змінювати значення <b class="code">cond2</b> і <b class="code">cond3</b>, тобі потрібно змінити їх тип на <b class="code">var</b>. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Тож як повинно виглядати моє остаточне рішення для цієї місії?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Ось воно:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length > 6;
+    var cond2 = /\d/.test(password);
+    var cond3 = /\D/.test(password);
+    if (password.length > 9) cond2 = cond3 = true; // cond 4
+    
+    return !([cond1, cond2, cond3].includes(false));
+}       
+        </pre>
+        </div>
+    </div>
+</div>
+<!-- <div class="question-answer">
+    <div class="question">
+        <p>
+            Show me more solutions!<br />
+            'Cause I wanna be a real 🥇 javascript Ninnjaa!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Sure, grab it!
+        </p>
+        <p>
+            Check the whole password of being digit (string integer without letters) or being all letters (word without digits). Combining conditions with parentheses, <b class="code">and</b> and <b class="code">or</b> operators.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+def is_acceptable_password(x: str) -> bool:
+
+    return (len(x)>6 and not x.isdigit() and not x.isalpha()) or len(x)>9
+        </pre>
+        </div>
+        <p>
+            Using <b class="code">any()</b> function and cascade comparisons.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+def is_acceptable_password(x: str) -> bool:
+
+    return any((len(x) > 9, 0 < sum(ch.isdigit() for ch in x) < len(x) > 6))
+        </pre>
+        </div>
+        <p><b>
+            Click "Best solutions" at mission menu and see a lot of other interesting solutions!
+        </b></p>
+    </div>
+</div> -->
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Дякую! Тепер я знаю і розумію більше! Все працює як слід!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍 Приємно це чути! Спробуй вирішити наступну місію в цій серії.
+        </p>
+    </div>
+</div>
+</body>

@@ -1,0 +1,134 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            I have no idea how to start solving this mission.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Let's continue with the solution from hints of the previous mission in
+        the series.
+        </p>
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length > 6;
+    const cond2 = /\d/.test(password);
+    const cond3 = /\D/.test(password);
+    
+    return !([cond1, cond2, cond3].includes(false));
+}
+        </pre>
+        <p>
+            In this mission you should add to your solution, that if the length of password bigger than 9,<b class="code">cond2</b> and <b class="code">cond3</b> are not required.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ok. How should I do that?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Use <a target="_blank" href="https://www.w3schools.com/jsref/jsref_if.asp">if statement</a> and <b class="code">length</b> property you already used.
+        </p>
+        <pre class="brush: javascript">
+if (password.length > 9) ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            I don't understand, how to disable conditions.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Since statement in <b class="code">return</b> is <b class="code">true</b>, when all items inside array are <b class="code">true</b>, you just need to assign not required conditions to <b class="code">true</b>, like they are already valid:
+        </p>
+        <pre class="brush: javascript">
+if (password.length > 9) cond2 = cond3 = true;
+        </pre>
+        <p>
+            Besides, since we may change values of <b class="code">cond2</b> and <b class="code">cond3</b>, you need to change their type to <b class="code">var</b>. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            So how my final solution for this mission should look like?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Here it is:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length > 6;
+    var cond2 = /\d/.test(password);
+    var cond3 = /\D/.test(password);
+    if (password.length > 9) cond2 = cond3 = true; // cond 4
+    
+    return !([cond1, cond2, cond3].includes(false));
+}       
+        </pre>
+        </div>
+    </div>
+</div>
+<!-- <div class="question-answer">
+    <div class="question">
+        <p>
+            Show me more solutions!<br />
+            'Cause I wanna be a real 🥇 javascript Ninnjaa!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Sure, grab it!
+        </p>
+        <p>
+            Check the whole password of being digit (string integer without letters) or being all letters (word without digits). Combining conditions with parentheses, <b class="code">and</b> and <b class="code">or</b> operators.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+def is_acceptable_password(x: str) -> bool:
+
+    return (len(x)>6 and not x.isdigit() and not x.isalpha()) or len(x)>9
+        </pre>
+        </div>
+        <p>
+            Using <b class="code">any()</b> function and cascade comparisons.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+def is_acceptable_password(x: str) -> bool:
+
+    return any((len(x) > 9, 0 < sum(ch.isdigit() for ch in x) < len(x) > 6))
+        </pre>
+        </div>
+        <p><b>
+            Click "Best solutions" at mission menu and see a lot of other interesting solutions!
+        </b></p>
+    </div>
+</div> -->
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Thanks! I know and understand more now! Everything works fine!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍 Glad to hear it! Try to solve the next one in the series.
+        </p>
+    </div>
+</div>
+</body>
