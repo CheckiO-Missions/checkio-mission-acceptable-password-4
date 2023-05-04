@@ -82,7 +82,7 @@ function isAcceptablePassword(password: string): boolean {
         </div>
     </div>
 </div>
-<!-- <div class="question-answer">
+<div class="question-answer">
     <div class="question">
         <p>
             Show me more solutions!<br />
@@ -94,30 +94,18 @@ function isAcceptablePassword(password: string): boolean {
             Sure, grab it!
         </p>
         <p>
-            Check the whole password of being digit (string integer without letters) or being all letters (word without digits). Combining conditions with parentheses, <b class="code">and</b> and <b class="code">or</b> operators.
+            Тут бачимо анонімну функцію з перевіркою довжини більше 9 АБО наявністю цифри та не-цифри І довжиною більше 6.
         </p>
         <div class="spoiler">
         <pre class="brush: javascript">
-def is_acceptable_password(x: str) -> bool:
-
-    return (len(x)>6 and not x.isdigit() and not x.isalpha()) or len(x)>9
-        </pre>
-        </div>
-        <p>
-            Using <b class="code">any()</b> function and cascade comparisons.
-        </p>
-        <div class="spoiler">
-        <pre class="brush: javascript">
-def is_acceptable_password(x: str) -> bool:
-
-    return any((len(x) > 9, 0 < sum(ch.isdigit() for ch in x) < len(x) > 6))
+var isAcceptablePassword = (p, l = p.length) => l > 9 || /\d\D|\D\d/.test(p) && l > 6
         </pre>
         </div>
         <p><b>
-            Click "Best solutions" at mission menu and see a lot of other interesting solutions!
+            Тисни "Best solutions" в меню місії і ти побачиш багато інших цікавих розв'язків!
         </b></p>
     </div>
-</div> -->
+</div>
 <div class="question-answer">
     <div class="question">
         <p>
