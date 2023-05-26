@@ -1,0 +1,132 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je n'ai aucune idée de la manière de commencer à résoudre cette mission.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Continuons avec la solution des indices de la mission précédente de la série
+        la série.
+        </p>
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -&gt; bool:
+
+    cond1 = len(password) &gt; 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password) 
+
+    return all([cond1, cond2, cond3])
+        </pre>
+        <p>
+            Dans cette mission, vous devriez ajouter à cette solution que si la longueur du mot de passe est supérieure à 9<b class="code">, les cond2</b> et <b class="code">cond3</b> ne sont pas nécessaires.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            D'accord. Comment dois-je m'y prendre?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Utilisez l'<a target="_blank" href="https://www.w3schools.com/python/gloss_python_if_statement.asp">instruction if</a> et la fonction <b class="code">len()</b> que vous avez déjà utilisées.
+        </p>
+        <pre class="brush: python">
+if len(password) &gt; 9:
+    ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je ne comprends pas comment désactiver les conditions.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Puisque la fonction <b class="code">all()</b> renvoie <b class="code">True</b>, lorsque tous les éléments à l'intérieur sont <b class="code">True</b>, il vous suffit d'assigner les conditions non requises à <b class="code">True</b>, comme si elles étaient déjà valides:
+        </p>
+        <pre class="brush: python">
+if len(password) &gt; 9: 
+    cond2 = cond3 = True
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            A quoi devrait ressembler ma solution finale pour cette mission?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            La voici:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -&gt; bool:
+
+    cond1 = len(password) &gt; 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password)
+    if len(password) &gt; 9: # cond4    
+        cond2 = cond3 = True
+
+    return all([cond1, cond2, cond3])       
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Montrez-moi d'autres solutions!<br />
+            parce que je veux être une vraie 🥇 Python Ninnjaa!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Bien sûr, prenez-le!
+        </p>
+        <p>
+            Vérifiez que le mot de passe complet est un chiffre (chaîne de caractères entiers sans lettres) ou qu'il est entièrement composé de lettres (mot sans chiffres). Combiner des conditions avec des parenthèses, des opérateurs <b class="code">et</b> et <b class="code">ou</b>.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_password(x: str) -&gt; bool:
+
+    return (len(x)&gt;6 and not x.isdigit() and not x.isalpha()) or len(x)&gt;9
+        </pre>
+        </div>
+        <p>
+            Utilisation de la fonction <b class="code">any()</b> et des comparaisons en cascade.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_password(x: str) -&gt; bool:
+
+    return any((len(x) &gt; 9, 0 &lt; sum(ch.isdigit() for ch in x) < len(x) > 6))
+        </pre>
+        </div>
+        <p><b>
+            Cliquez sur "Meilleures solutions" dans le menu mission et découvrez de nombreuses autres solutions intéressantes!
+        </b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Merci beaucoup! Je sais et je comprends mieux maintenant! Tout fonctionne bien!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍 Heureux de l'apprendre! Essayez de résoudre le prochain de la série.
+        </p>
+    </div>
+</div>
+</body>
