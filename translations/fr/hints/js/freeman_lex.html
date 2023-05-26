@@ -1,0 +1,122 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je n'ai aucune idée de la manière de commencer à résoudre cette mission.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Continuons avec la solution des indices de la mission précédente de la série
+        la série.
+        </p>
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length &gt; 6;
+    const2 = /\D/.test(password);
+    const3 = /\D/.test(password);
+    
+    return!([cond1, cond2, cond3].includes(false));
+}
+        </pre>
+        <p>
+            Dans cette mission, vous devez ajouter à votre solution que si la longueur du mot de passe est supérieure à 9, <b class="code">cond2</b> et <b class="code">cond3</b> ne sont pas nécessaires.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            D'accord. Comment dois-je m'y prendre?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Utilisez l'<a target="_blank" href="https://www.w3schools.com/jsref/jsref_if.asp">instruction if</a> et la propriété <b class="code">length</b> que vous avez déjà utilisée.
+        </p>
+        <pre class="brush: javascript">
+if (password.length &gt; 9) ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je ne comprends pas comment désactiver les conditions.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Puisque l'énoncé dans le <b class="code">retour</b> est <b class="code">vrai</b>, lorsque tous les éléments dans le tableau sont <b class="code">vrais</b>, vous avez juste besoin d'assigner les conditions non requises à <b class="code">vrai</b>, comme s'ils étaient déjà valides:
+        </p>
+        <pre class="brush: javascript">
+if (password.length &gt; 9) cond2 = cond3 = true;
+        </pre>
+        <p>
+            De plus, comme nous pouvons changer les valeurs de <b class="code">cond2</b> et <b class="code">cond3</b>, vous devez changer leur type en <b class="code">var</b>. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            A quoi devrait ressembler ma solution finale pour cette mission?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            La voici:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length &gt; 6;
+    var cond2 = /\D/.test(password);
+    var cond3 = /\D/.test(password);
+    if (password.length &gt; 9) cond2 = cond3 = true; // cond 4
+    
+    return!([cond1, cond2, cond3].includes(false));
+}       
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Montrez-moi d'autres solutions!<br />
+            parce que je veux être un vrai 🥇 Javascript Hero!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Bien sûr, prenez-le!
+        </p>
+        <p>
+            Voici une fonction anonyme qui vérifie la longueur supérieure à 9 OU la présence d'un chiffre et d'un autre chiffre ET la longueur supérieure à 6.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var isAcceptablePassword = (p, l = p.length) =&gt; l &gt; 9 || /\D\D\D\D/.test(p) &amp;&amp; l &gt; 6
+        </pre>
+        </div>
+        <p><b>
+            Cliquez sur "Meilleures solutions" dans le menu mission et découvrez de nombreuses autres solutions intéressantes!
+        </b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Merci beaucoup! Je sais et je comprends mieux maintenant! Tout fonctionne bien!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍 Heureux de l'apprendre! Essayez de résoudre le prochain de la série.
+        </p>
+    </div>
+</div>
+</body>
