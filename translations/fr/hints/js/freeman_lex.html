@@ -14,7 +14,7 @@
 function isAcceptablePassword(password: string): boolean {
 
     const cond1 = password.length &gt; 6;
-    const cond2 = /\D/.test(password);
+    const cond2 = /\d/.test(password);
     const cond3 = /\D/.test(password);
     
     return !([cond1, cond2, cond3].includes(false));
@@ -73,7 +73,7 @@ if (password.length &gt; 9) cond2 = cond3 = true;
 function isAcceptablePassword(password: string): boolean {
 
     const cond1 = password.length &gt; 6;
-    var cond2 = /\D/.test(password);
+    var cond2 = /\d/.test(password);
     var cond3 = /\D/.test(password);
     if (password.length &gt; 9) cond2 = cond3 = true; // cond 4
     
