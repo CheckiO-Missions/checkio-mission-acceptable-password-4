@@ -14,8 +14,8 @@
 function isAcceptablePassword(password: string): boolean {
 
     const cond1 = password.length &gt; 6;
-    const2 = /\D/.test(password);
-    const3 = /\D/.test(password);
+    const cond2 = /\D/.test(password);
+    const cond3 = /\D/.test(password);
     
     return !([cond1, cond2, cond3].includes(false));
 }
@@ -95,11 +95,11 @@ function isAcceptablePassword(password: string): boolean {
             Bien sûr, prenez-le!
         </p>
         <p>
-            Voici une fonction anonyme qui vérifie la longueur supérieure à 9 OU la présence d'un chiffre et d'un autre chiffre ET la longueur supérieure à 6.
+            Voici une fonction anonyme qui vérifie la longueur supérieure à 9 OR la présence d'un chiffre et d'un autre chiffre AND la longueur supérieure à 6.
         </p>
         <div class="spoiler">
         <pre class="brush: javascript">
-var isAcceptablePassword = (p, l = p.length) =&gt; l &gt; 9 || /\D\D\D\D/.test(p) &amp;&amp; l &gt; 6
+var isAcceptablePassword = (p, l = p.length) =&gt; l &gt; 9 || /\d\D\D\d/.test(p) &amp;&amp; l &gt; 6
         </pre>
         </div>
         <p><b>
