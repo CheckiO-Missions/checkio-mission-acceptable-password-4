@@ -1,0 +1,122 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Nie mam pojęcia, jak zacząć rozwiązywać tę misję.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Proszę kontynuować rozwiązanie z podpowiedzi do poprzedniej misji z serii
+        serii.
+        </p>
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length> 6;
+    const cond2 = /\d/.test(password);
+    const cond3 = /\D/.test(password);
+    
+    return!([cond1, cond2, cond3].includes(false));
+}
+        </pre>
+        <p>
+            W tej misji proszę dodać do swojego rozwiązania, że jeśli długość hasła jest większa niż 9, <b class="code">cond2</b> i <b class="code">cond3</b> nie są wymagane.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ok. Jak mam to zrobić?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Proszę użyć właściwości <a target="_blank" href="https://www.w3schools.com/jsref/jsref_if.asp">if statement</a> i <b class="code">length</b>, z których już Pan korzystał.
+        </p>
+        <pre class="brush: javascript">
+if (password.length> 9) ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Nie rozumiem, jak wyłączyć warunki.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Ponieważ instrukcja w <b class="code">return</b> to <b class="code">true</b>, gdy wszystkie elementy wewnątrz tablicy to <b class="code">true</b>, wystarczy przypisać niewymagane warunki do <b class="code">true</b>, tak jakby były już ważne:
+        </p>
+        <pre class="brush: javascript">
+if (password.length> 9) cond2 = cond3 = true;
+        </pre>
+        <p>
+            Poza tym, ponieważ możemy zmienić wartości <b class="code">cond2</b> i <b class="code">cond3</b>, proszę zmienić ich typ na <b class="code">var</b>. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jak więc powinno wyglądać moje ostateczne rozwiązanie dla tej misji?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Oto ono:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length> 6;
+    var cond2 = /\d/.test(password);
+    var cond3 = /\D/.test(password);
+    if (password.length> 9) cond2 = cond3 = true; // cond 4
+    
+    return!([cond1, cond2, cond3].includes(false));
+}       
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Proszę pokazać mi więcej rozwiązań!<br />
+            bo chcę być prawdziwym 🥇 Javascript Hero!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Jasne, proszę łapać!
+        </p>
+        <p>
+            Oto anonimowa funkcja sprawdzająca długość większą niż 9 LUB obecność cyfry i nie-cyfry ORAZ długość większą niż 6.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var isAcceptablePassword = (p, l = p.length) => l> 9 || /\d\D|\D\d/.test(p) && l> 6
+        </pre>
+        </div>
+        <p>
+            Proszę kliknąć <b>Best Solutions</b> w menu misji i zobaczyć wiele innych ciekawych rozwiązań!
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Dzięki! Teraz wiem i rozumiem więcej! Wszystko działa jak należy!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            miło mi to słyszeć! Proszę spróbować rozwiązać następne zadanie z serii.
+        </p>
+    </div>
+</div>
+</body>
