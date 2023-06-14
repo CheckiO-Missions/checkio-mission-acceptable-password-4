@@ -1,0 +1,40 @@
+<!-- Describe task in general -->
+
+<p> 
+    W tej misji muszą Państwo utworzyć funkcję weryfikacji hasła.
+</p>
+
+<p>Warunki weryfikacji są następujące:</p>
+
+<ul>
+    <li>długość powinna być większa niż 6;</li>
+    <li>powinno zawierać co najmniej jedną cyfrę, ale nie może składać się z samych cyfr;</li>
+    <li>jeśli hasło jest dłuższe niż 9 - poprzednia zasada (o jednej cyfrze), nie jest wymagana.</li>
+</ul>
+
+
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Dane wejściowe:</strong> Ciąg znaków {% if is_js %}<span>(string)</span> {% else %} <span>(str)</span> {% endif %}.
+</p>
+
+<p>
+   <strong>Wyjście:</strong> Wartość logiczna {% if is_js %}<span>(boolean)</span> {% else %} <span>(bool)</span> {% endif %}. 
+</p>
+
+
+<!-- Give some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Przykłady:</strong>
+    </p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+
+
+<p class="for_info_only">
+    <strong>Sposób użycia:</strong>
+    <i>Formularz weryfikacji hasła. Dobrze jest również dowiedzieć się, jak można ocenić zadanie.</i>
+</p>
