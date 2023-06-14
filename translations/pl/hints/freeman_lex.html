@@ -1,0 +1,132 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Nie mam pojęcia, jak zacząć rozwiązywać tę misję.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Proszę kontynuować rozwiązanie z podpowiedzi do poprzedniej misji z serii
+        serii.
+        </p>
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password)> 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password) 
+
+    return all([cond1, cond2, cond3])
+        </pre>
+        <p>
+            W tej misji proszę dodać do tego rozwiązania, że jeśli długość hasła jest większa niż 9,<b class="code">cond2</b> i <b class="code">cond3</b> nie są wymagane.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ok. Jak mam to zrobić?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Proszę użyć funkcji <a target="_blank" href="https://www.w3schools.com/python/gloss_python_if_statement.asp">if statement</a> i <b class="code">len()</b>, z których już Pan korzystał.
+        </p>
+        <pre class="brush: python">
+if len(password)> 9:
+    ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Nie rozumiem, jak wyłączyć warunki.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Ponieważ funkcja <b class="code">all()</b> zwraca <b class="code">True</b>, gdy wszystkie elementy wewnątrz są <b class="code">True</b>, wystarczy przypisać niewymagane warunki do <b class="code">True</b>, tak jakby były już ważne:
+        </p>
+        <pre class="brush: python">
+if len(password)> 9:    
+    cond2 = cond3 = True
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Więc jak powinno wyglądać moje ostateczne rozwiązanie dla tej misji?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Oto ono:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password)> 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password)
+    if len(password)> 9: # cond4    
+        cond2 = cond3 = True
+
+    return all([cond1, cond2, cond3])        
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Proszę pokazać mi więcej rozwiązań!<br />
+            bo chcę być prawdziwym 🥇 Pythonem Ninnjaa!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Jasne, proszę łapać!
+        </p>
+        <p>
+            Proszę sprawdzić, czy całe hasło składa się z cyfr (ciąg liczb całkowitych bez liter) lub z samych liter (słowo bez cyfr). Łączenie warunków za pomocą nawiasów, operatorów <b class="code">and</b> i <b class="code">or</b>.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_password(x: str) -> bool:
+
+    return (len(x)>6 and not x.isdigit() and not x.isalpha()) or len(x)>9
+        </pre>
+        </div>
+        <p>
+            Korzystanie z funkcji <b class="code">any()</b> i porównań kaskadowych.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_password(x: str) -> bool:
+
+    return any((len(x)> 9, 0 < sum(ch.isdigit() for ch in x) < len(x)> 6))
+        </pre>
+        </div>
+        <p>
+            Proszę kliknąć <b>Best Solutions</b> w menu misji i zobaczyć wiele innych ciekawych rozwiązań!
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Dzięki! Teraz wiem i rozumiem więcej! Wszystko działa jak należy!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            miło mi to słyszeć! Proszę spróbować rozwiązać następne zadanie z serii.
+        </p>
+    </div>
+</div>
+</body>
