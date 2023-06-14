@@ -16,11 +16,11 @@
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Input:</strong> A <span translate="repeat">string</span>.
+    <strong>Input:</strong> A string {% if is_js %}<span translate="no">(string)</span>{% else %}<span translate="no">(str)</span>{% endif %}.
 </p>
 
 <p>
-    <strong>Output:</strong> A {% if is_js %}<span translate="repeat">boolean</span>{% else %}<span translate="repeat">bool</span>{% endif %}. 
+    <strong>Output:</strong> A logic value {% if is_js %}<span translate="no">(boolean)</span>{% else %}<span translate="no">(bool)</span>{% endif %}. 
 </p>
 
 
