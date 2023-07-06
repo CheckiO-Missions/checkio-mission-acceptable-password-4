@@ -1,0 +1,132 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我不知道如何开始解决这个任务。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            让我们继续从系列任务中的前一个任务的提示中寻找解决方案吧
+        系列任务的提示。
+        </p>
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password)> 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password) 
+
+    return all([cond1, cond2, cond3])
+        </pre>
+        <p>
+            在这个任务中，你应该在这个解决方案中加入，如果密码的长度大于9，<b class="code">cond2</b> 和<b class="code">cond3</b> 是不需要的。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            好的。我应该怎么做？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            使用你已经使用过的<a target="_blank" href="https://www.w3schools.com/python/gloss_python_if_statement.asp">if statement</a> 和<b class="code">len()</b> 函数。
+        </p>
+        <pre class="brush: python">
+if len(password)> 9:
+    ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我不明白，如何禁用条件。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            由于<b class="code">all()</b> 函数的返回值是<b class="code">True</b> ，当里面的所有项目都是<b class="code">True</b> ，你只需要把不需要的条件分配给<b class="code">True</b> ，就像它们已经有效一样：
+        </p>
+        <pre class="brush: python">
+if len(password)> 9:    
+    cond2 = cond3 = True
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            那么我这个任务的最终解决方案应该是怎样的呢？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            这就是了：
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password)> 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password)
+    if len(password)> 9: # cond4    
+        cond2 = cond3 = True
+
+    return all([cond1, cond2, cond3])        
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            告诉我更多的解决方案!<br />
+            因为我想成为一个真正的🥇 Python Ninnjaa!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            当然，抓住它!
+        </p>
+        <p>
+            检查整个密码是否为数字（没有字母的整数串）或全部为字母（没有数字的单词）。用括号、<b class="code">and</b> 和<b class="code">or</b> 操作符组合条件。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_password(x: str) -> bool:
+
+    return (len(x)>6 and not x.isdigit() and not x.isalpha()) or len(x)>9
+        </pre>
+        </div>
+        <p>
+            使用<b class="code">any()</b> 函数和级联比较。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_password(x: str) -> bool:
+
+    return any((len(x)> 9, 0 < sum(ch.isdigit() for ch in x) < len(x)> 6))
+        </pre>
+        </div>
+        <p>
+            点击任务菜单上的<b>Best Solutions</b> ，可以看到很多其他有趣的解决方案!
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            谢谢!我现在知道并理解了更多!一切工作都很顺利!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍很高兴听到这个消息!试着解决这个系列的下一个问题。
+        </p>
+    </div>
+</div>
+</body>

@@ -1,0 +1,122 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我不知道如何开始解决这个任务。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            让我们继续从系列任务中的前一个任务的提示中寻找解决方案吧
+        系列任务的提示。
+        </p>
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length> 6;
+    const cond2 = /\d/.test(password);
+    const cond3 = /\D/.test(password);
+    
+    return!([cond1, cond2, cond3].includes(false));
+}
+        </pre>
+        <p>
+            在这个任务中，你应该在你的解决方案中加入，如果密码的长度大于9，<b class="code">cond2</b> 和<b class="code">cond3</b> 是不需要的。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            好的。我应该怎么做？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            使用你已经使用的<a target="_blank" href="https://www.w3schools.com/jsref/jsref_if.asp">if statement</a> 和<b class="code">length</b> 属性。
+        </p>
+        <pre class="brush: javascript">
+if (password.length> 9) ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我不明白，如何禁用条件。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            由于<b class="code">return</b> 中的语句是<b class="code">true</b> ，当数组中的所有项目都是<b class="code">true</b> ，你只需要将不需要的条件分配到<b class="code">true</b> ，就像它们已经有效一样：
+        </p>
+        <pre class="brush: javascript">
+if (password.length> 9) cond2 = cond3 = true;
+        </pre>
+        <p>
+            此外，由于我们可能会改变<b class="code">cond2</b> 和<b class="code">cond3</b> 的值，你需要将它们的类型改为<b class="code">var</b> 。 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            那么我的这个任务的最终解决方案应该是什么样子的呢？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            这就是了：
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length> 6;
+    var cond2 = /\d/.test(password);
+    var cond3 = /\D/.test(password);
+    if (password.length> 9) cond2 = cond3 = true; // cond 4
+    
+    return!([cond1, cond2, cond3].includes(false));
+}       
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            告诉我更多的解决方案!<br />
+            因为我想成为一个真正的🥇 Javascript英雄!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            当然，抓住它!
+        </p>
+        <p>
+            这里是一个匿名函数，可以检查长度超过9或存在数字和非数字以及长度超过6的情况。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var isAcceptablePassword = (p, l = p.length) => l> 9 || /\d\D|\D\d/.test(p) && l> 6
+        </pre>
+        </div>
+        <p>
+            点击任务菜单上的<b>Best Solutions</b> ，可以看到很多其他有趣的解决方案!
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            谢谢!我现在知道并理解了更多!一切工作都很顺利!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍很高兴听到这个消息!试着解决这个系列的下一个问题。
+        </p>
+    </div>
+</div>
+</body>
