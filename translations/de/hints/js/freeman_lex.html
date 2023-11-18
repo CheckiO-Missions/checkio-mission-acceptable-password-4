@@ -1,0 +1,122 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Lassen Sie uns mit der Lösung aus den Hinweisen der vorherigen Mission in
+        der Serie.
+        </p>
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length> 6;
+    const cond2 = /\d/.test(password);
+    const cond3 = /\D/.test(password);
+    
+    return!([cond1, cond2, cond3].includes(false));
+}
+        </pre>
+        <p>
+            In dieser Mission sollten Sie zu Ihrer Lösung hinzufügen, dass, wenn die Länge des Passworts größer als 9 ist, <b class="code">cond2</b> und <b class="code">cond3</b> nicht erforderlich sind.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Gut. Wie soll ich das machen?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Verwenden Sie die Eigenschaften <a target="_blank" href="https://www.w3schools.com/jsref/jsref_if.asp">if statement</a> und <b class="code">length</b>, die Sie bereits verwendet haben.
+        </p>
+        <pre class="brush: javascript">
+if (password.length> 9) ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich verstehe nicht, wie Sie die Bedingungen deaktivieren können.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Da die Anweisung in <b class="code">return</b> <b class="code">true</b> ist, müssen Sie, wenn alle Elemente im Array <b class="code">true</b> sind, die nicht benötigten Bedingungen einfach <b class="code">true</b> zuweisen, als ob sie bereits gültig wären:
+        </p>
+        <pre class="brush: javascript">
+if (password.length> 9) cond2 = cond3 = true;
+        </pre>
+        <p>
+            Da wir außerdem die Werte von <b class="code">cond2</b> und <b class="code">cond3</b> ändern können, müssen Sie deren Typ in <b class="code">var</b> ändern. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Wie sollte also meine endgültige Lösung für diese Mission aussehen?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Hier ist sie:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length> 6;
+    var cond2 = /\d/.test(password);
+    var cond3 = /\D/.test(password);
+    if (password.length> 9) cond2 = cond3 = true; // cond 4
+    
+    return!([cond1, cond2, cond3].includes(false));
+}       
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Zeigen Sie mir mehr Lösungen!<br />
+            denn ich möchte ein echter 🥇 Javascript-Held sein!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Klar, schnappen Sie es sich!
+        </p>
+        <p>
+            Hier ist eine anonyme Funktion, die die Länge von mehr als 9 ODER das Vorhandensein von Ziffern und Nicht-Ziffern UND die Länge von mehr als 6 überprüft.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var isAcceptablePassword = (p, l = p.length) => l> 9 || /\d\D|\D\d/.test(p) && l> 6
+        </pre>
+        </div>
+        <p>
+            Klicken Sie auf <b>Best Solutions</b> im Menü Mission und sehen Sie sich viele andere interessante Lösungen an!
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Danke! Ich weiß und verstehe jetzt mehr! Alles funktioniert bestens!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍 Freut mich zu hören! Versuchen Sie, das nächste Rätsel der Serie zu lösen.
+        </p>
+    </div>
+</div>
+</body>
