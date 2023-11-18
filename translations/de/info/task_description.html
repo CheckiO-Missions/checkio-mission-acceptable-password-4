@@ -1,0 +1,42 @@
+<!-- Describe task in general -->
+
+<img src="{{MEDIA_CONVERT}}title.png" class="title_img" />
+
+<p> 
+    In dieser Mission müssen Sie eine Passwortüberprüfungsfunktion erstellen.
+</p>
+
+<p>Die Bedingungen für die Überprüfung sind:</p>
+
+<ul>
+    <li>die Länge sollte größer als 6 sein;</li>
+    <li>sollte mindestens eine Ziffer enthalten, darf aber nicht nur aus Ziffern bestehen;</li>
+    <li>wenn das Kennwort länger als 9 ist - die vorherige Regel ist nicht erforderlich.</li>
+</ul>
+
+
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Eingabe:</strong> Eine Zeichenkette {% if is_js %}<span>(string)</span> {% else %} <span>(str)</span> {% endif %}.
+</p>
+
+<p>
+   <strong>Ausgabe:</strong> Ein logischer Wert {% if is_js %}<span>(boolean)</span> {% else %} <span>(bool)</span> {% endif %}. 
+</p>
+
+
+<!-- Give some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Beispiele:</strong>
+    </p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+
+
+<p class="for_info_only">
+    <strong>Wie es verwendet wird:</strong>
+    <i>Für ein Formular zur Passwortüberprüfung. Es ist auch gut zu wissen, wie die Aufgabe ausgewertet werden kann.</i>
+</p>
